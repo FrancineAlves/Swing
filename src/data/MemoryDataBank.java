@@ -25,12 +25,10 @@ public class MemoryDataBank implements IDao<Programador>{
     @Override
     public List<Programador> getOne(String nome) {
         
-         List<Programador> lista = new ArrayList<Programador>();
+        List<Programador> lista = new ArrayList<Programador>();
          
-        Programador programador = new Programador();
-	
 			for(Programador p: memoryDataBank) {
-                                if (p.getNome().contains(nome)){
+                                if (p.getNome().toLowerCase().contains(nome)){
                                     lista.add(p);
                                 };
 			}

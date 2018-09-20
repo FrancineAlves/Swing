@@ -132,9 +132,13 @@ public class DialogProgramador extends JDialog {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
         String nome = jTextField1.getText();
-        pbm = new ProgramadorTableModel(principal.getProgramadoresBuscar(nome));
-        jTable1.setModel(pbm);
+        
+        if(nome.length()>=3 || nome.length()==0){
+            pbm = new ProgramadorTableModel(principal.getProgramadoresBuscar(nome));
+            jTable1.setModel(pbm);
+        }
       
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -143,9 +147,14 @@ public class DialogProgramador extends JDialog {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
-         String nome = jTextField1.getText();
-        pbm = new ProgramadorTableModel(principal.getProgramadoresBuscar(nome));
-        jTable1.setModel(pbm);
+        
+        String nome = jTextField1.getText();
+        
+        if(nome.length()>=3 || nome.length()==0){
+            pbm = new ProgramadorTableModel(principal.getProgramadoresBuscar(nome));
+            jTable1.setModel(pbm);
+        }
+        
     }//GEN-LAST:event_jTextField1KeyTyped
 
     private ProgramadorTableModel pbm;
